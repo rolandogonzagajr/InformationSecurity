@@ -30,17 +30,18 @@ h1 {
     background-size: 150%; /* Adjust the gradient width as needed */
     -webkit-background-clip: text; /* Clip the text to the gradient */
     color: transparent; /* Make the text transparent */
-    animation: blink 2s linear infinite; /* Add animation to the gradient */
+    animation: blink 1s infinite; /* Add animation to change color */
 }
 
 @keyframes blink {
     0%, 100% {
-        background-position: 0% 50%;
+        color: transparent;
     }
     50% {
-        background-position: 100% 50%;
+        color: #fff; /* Set the color you want during the "on" phase */
     }
 }
+
 
 .leftnav {
     width: auto; /* Remove the fixed width to allow it to expand horizontally */
