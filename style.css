@@ -38,6 +38,14 @@ h1 {
     }
 }
 
+/* Style the second line with a red blinking background */
+h1::after {
+    content: attr(data-second-line);
+    color: transparent;
+    background-color: red;
+    animation: blink 2s infinite; /* Add animation to change color */
+}
+
 .leftnav {
     background: linear-gradient(90deg, #005aff, #ff00e0); /* Darker gradient background */
     width: auto; /* Remove the fixed width to allow it to expand horizontally */
