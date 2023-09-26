@@ -29,14 +29,21 @@ h1 {
     animation: blink 2s infinite; /* Add blinking animation */
 }
 
+/* Apply styles to the second line */
+.second-line {
+    color: red; /* Text color for the second line */
+    animation: blink 2s infinite; /* Add blinking animation */
+}
+
 @keyframes blink {
     0%, 100% {
-        background-position: 100% 0;
+        opacity: 0; /* Make the text invisible */
     }
     50% {
-        background-position: 0 100%;
+        opacity: 1; /* Make the text visible */
     }
 }
+
 
 .leftnav {
     background: linear-gradient(90deg, #005aff, #ff00e0); /* Darker gradient background */
