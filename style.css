@@ -31,7 +31,7 @@ h1 {
 
 h1 .second-line {
     color: red; /* Text color for the second line */
-    animation: blink 2s infinite; /* Add blinking animation */
+    animation: blink 1s infinite; /* Add blinking animation */
 }
 
 @keyframes blink {
