@@ -1,9 +1,5 @@
 body {
-    background-color: #f0f0f0; /* Super Light Gray Background Color */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background: #f0f0f0; /* Super light background color */
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -26,24 +22,24 @@ body {
 h1 {
     font-size: 40px;
     line-height: 1.2; /* Adjust line height to control the spacing between lines */
-    background: linear-gradient(90deg, #c12a2a, #d3b991, #7bb274, #c12a2a);
-    background-size: 150%; /* Adjust the gradient width as needed */
+    background: linear-gradient(90deg, #005aff, #ff00e0); /* Darker gradient background */
+    background-size: 200% 100%; /* Wider gradient */
     -webkit-background-clip: text; /* Clip the text to the gradient */
     color: transparent; /* Make the text transparent */
-    animation: blink 1s infinite; /* Add animation to change color */
+    animation: blink 2s infinite; /* Add animation to change color */
 }
 
 @keyframes blink {
     0%, 100% {
-        color: transparent;
+        background-position: 100% 0;
     }
     50% {
-        color: #fff; /* Set the color you want during the "on" phase */
+        background-position: 0 100%;
     }
 }
 
-
 .leftnav {
+    background: linear-gradient(90deg, #005aff, #ff00e0); /* Darker gradient background */
     width: auto; /* Remove the fixed width to allow it to expand horizontally */
     min-width: 250px; /* Set a minimum width if needed */
     padding: 20px;
@@ -56,16 +52,24 @@ h1 {
 
 .leftnav a {
     text-decoration: none;
-    color: #333; /* Font color for the links */
+    color: inherit; /* Use the inherited font color */
     transition: background-color 0.3s ease, color 0.3s ease;
     padding: 10px;
     text-align: justify; /* Justify the text in navigation links */
     flex-grow: 1; /* Allow navigation links to fill available vertical space */
-    background-color: #d3b991; /* Slightly lighter background color for navigation links */
-    border-radius: 5px; /* Add rounded corners to the links */
 }
 
 .leftnav a:hover {
-    background-color: #7bb274; /* Hover background color matching the gradient */
-    color: #fff; /* Hover text color */
+    background-color: #005aff; /* Match hover color to the gradient */
+}
+
+/* Additional styles for hover effect */
+.leftnav a:hover {
+    color: #ff00e0; /* Change font color on hover to match the gradient */
+}
+
+.leftnav a:hover::after {
+    content: " ►"; /* Add a right arrow after the link text on hover */
+    font-weight: bold;
+    margin-left: 5px;
 }
