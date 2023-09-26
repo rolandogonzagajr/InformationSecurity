@@ -26,7 +26,6 @@ h1 {
     background-size: 200% 100%; /* Wider gradient */
     -webkit-background-clip: text; /* Clip the text to the gradient */
     color: transparent; /* Make the text transparent */
-    animation: blink 2s infinite; /* Add animation to change color */
 }
 
 @keyframes blink {
@@ -39,9 +38,7 @@ h1 {
 }
 
 /* Style the second line with a red blinking background */
-h1::after {
-    content: attr(data-second-line);
-    color: transparent;
+h1 .second-line {
     background-color: red;
     animation: blink 2s infinite; /* Add animation to change color */
 }
