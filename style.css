@@ -1,4 +1,5 @@
 body {
+    background-color: #87CEEB; /* Light Blue Background Color */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -7,7 +8,6 @@ body {
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333; /* Font color for the entire page */
-    background-color: #f0f0f0; /* Background color for the entire page */
     display: flex;
     min-height: 100vh; /* Ensure a minimum height of the viewport */
     align-items: center; /* Center vertically */
@@ -24,9 +24,22 @@ body {
 }
 
 h1 {
-    color: #333;
     font-size: 40px;
     line-height: 1.2; /* Adjust line height to control the spacing between lines */
+    background: linear-gradient(90deg, #ff5733, #fddb92, #c2f0c2, #ffb6b9, #ff5733);
+    background-size: 80%; /* Adjust the gradient width as needed */
+    -webkit-background-clip: text; /* Clip the text to the gradient */
+    color: transparent; /* Make the text transparent */
+    animation: gradient 8s linear infinite; /* Add animation to the gradient */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .leftnav {
