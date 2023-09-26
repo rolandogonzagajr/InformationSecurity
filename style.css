@@ -26,18 +26,18 @@ body {
 h1 {
     font-size: 40px;
     line-height: 1.2; /* Adjust line height to control the spacing between lines */
-    background: linear-gradient(90deg, #ff5733, #fddb92, #c2f0c2, #ffb6b9, #ff5733);
+    background: linear-gradient(90deg, #c12a2a, #d3b991, #7bb274, #c12a2a);
     background-size: 150%; /* Adjust the gradient width as needed */
     -webkit-background-clip: text; /* Clip the text to the gradient */
     color: transparent; /* Make the text transparent */
-    animation: gradient 8s linear infinite; /* Add animation to the gradient */
+    animation: blink 2s linear infinite; /* Add animation to the gradient */
 }
 
-@keyframes gradient {
-    0% {
+@keyframes blink {
+    0%, 100% {
         background-position: 0% 50%;
     }
-    100% {
+    50% {
         background-position: 100% 50%;
     }
 }
@@ -60,11 +60,11 @@ h1 {
     padding: 10px;
     text-align: justify; /* Justify the text in navigation links */
     flex-grow: 1; /* Allow navigation links to fill available vertical space */
-    background-color: #ff5733; /* Set a background color for navigation links matching the gradient */
+    background-color: #d3b991; /* Slightly lighter background color for navigation links */
     border-radius: 5px; /* Add rounded corners to the links */
 }
 
 .leftnav a:hover {
-    background-color: #ffb6b9; /* Hover background color matching the gradient */
+    background-color: #7bb274; /* Hover background color matching the gradient */
     color: #fff; /* Hover text color */
 }
