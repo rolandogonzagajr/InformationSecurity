@@ -48,6 +48,8 @@ h1 {
     padding: 10px;
     text-align: justify; /* Justify the text in navigation links */
     flex-grow: 1; /* Allow navigation links to fill available vertical space */
+    background-color: #007BFF; /* Set a background color for navigation links */
+    border-radius: 5px; /* Add rounded corners to the links */
 }
 
 .leftnav a:hover {
