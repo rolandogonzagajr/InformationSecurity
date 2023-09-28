@@ -12,6 +12,9 @@ body {
     align-items: center;
     justify-content: flex-start; /* Align content to the left */
     overflow-x: hidden; /* Hide horizontal overflow */
+    font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
 }
 
 .container {
