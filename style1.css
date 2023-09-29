@@ -23,6 +23,11 @@ body {
     padding-right: 40px;
 }
 
+.screen-fit {
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: contain;
+}
 
 
     h1 {
