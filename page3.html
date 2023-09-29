@@ -9,18 +9,91 @@
 </head>
 <body>
     <div class="container">
-        <div class="leftnav">
-             <a class="active" href="page1.html"> Booking</a>
+       <div class="leftnav">
+        <a class="active" href="page1.html"> Booking</a>
             <a href="page2.html"> What is Race Condition?</a>
             <a href="page3.html"> Types Of Race Conditions</a>
             <a href="page4.html"> Sample Attack</a>
             <a href="page5.html"> Preventing Race Conditions</a>
+            
+        </div>
+        <div class="content">
+            <h1 class="content">Race Condition Types</h1>
+
+<h2>Limit-Overrun Race Conditions</h2>
+    <p>Description: Traditional race conditions often involve limit-overrun exploits where synchronized requests are used to overcome specific limits or security checks.</p>
+    <p>The period of time during which a collision is possible is known as the "race window". This could be the fraction of a second between two interactions with the database, for example.</p>
+    <p>Like other logic flaws, the impact of a race condition is heavily dependent on the application and the specific functionality in which it occurs.</p>
+
+    <h3>Example Scenarios:</h3>
+    <ul>
+        <li>Redeeming a gift card multiple times</li>
+        <li>Repeatedly applying a single discount code</li>
+        <li>Rating a product multiple times</li>
+        <li>Withdrawing or transferring cash in excess of your account balance</li>
+        <li>Reusing a single CAPTCHA solution</li>
+        <li>Bypassing an anti-bruteforce rate-limit</li>
+    </ul>
+
+    <h2>Multi-Endpoint Race Conditions</h2>
+    <p>Involve simultaneous requests to multiple endpoints.</p>
+
+    <h3>Example:</h3>
+    <p>Cart manipulation in online stores.</p>
+
+    <h3>Testing Challenges:</h3>
+    <ul>
+        <li>Vulnerabilities in payment validation and order confirmation within a single request.</li>
+        <li>Alignment Issues in Race Windows:</li>
+        <ul>
+            <li>Difficulty syncing race windows for each request.</li>
+            <li>Caused by network delays and varying endpoint processing times.</li>
+        </ul>
+        <li>Addressing Network Delays:</li>
+        <ul>
+            <li>Use "connection warming" to smooth out delays.</li>
+            <li>Helps distinguish connection setup delays from endpoint-specific delays.</li>
+        </ul>
+        <li>Testing with Burp Repeater:</li>
+        <ul>
+            <li>Utilize "Send group in sequence" for single connection testing.</li>
+            <li>Longer processing times in the first request may be offset by subsequent requests, indicating successful connection warming.</li>
+        </ul>
+    </ul>
+
+    <h2>Single-Endpoint Race Conditions</h2>
+    <p>Involve sending parallel requests with different values to a single endpoint.</p>
+
+    <h3>Example:</h3>
+    <p>Password reset mechanism storing user ID and reset token in the user's session.</p>
+
+    <h3>Potential Collision Scenario:</h3>
+    <p>In a password reset mechanism:</p>
+    <ul>
+        <li>Two parallel requests from the same session.</li>
+        <li>Different usernames in each request.</li>
+        <li>Collision in the handling of user IDs and reset tokens.</li>
+    </ul>
+
+    <h2>Partial Construction Race Conditions</h2>
+    <p>Occur when applications create objects in multiple steps, introducing a temporary exploitable middle state.</p>
+
+    <h3>Example:</h3>
+    <p>Registration process creating a user and setting API key in separate steps.</p>
+
+    <h3>Exploitation Window:</h3>
+    <p>For instance, in user registration:</p>
+    <ul>
+        <li>Two separate steps: user creation and API key assignment.</li>
+        <li>Exploitable window where the user exists but API key is uninitialized.</li>
+    </ul>
+
+    <h3>Exploitation Method:</h3>
+    <p>Injecting input to match uninitialized database values.</p>
+    <p>Exploiting security controls that compare against uninitialized states.</p>
 
 
-    
         </div>
     </div>
 </body>
 </html>
-
-
