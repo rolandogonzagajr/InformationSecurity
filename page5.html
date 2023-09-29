@@ -18,13 +18,45 @@
         
         </div>
         <div class="content">
-            <h1 class="content">Frequency of Letters in Filipino</h1>
+            <h1 class="content">Preventing Race Condition Vulnerabilities</h1>
+
+
+    <p>When a single request can transition an application through invisible sub-states, understanding and predicting its behavior is extremely difficult. This makes defense impractical. To secure an application properly, we recommend eliminating sub-states from all sensitive endpoints by applying the following strategies:</p>
+
+    <ol>
+        <li>
+             <h2><strong>Avoid Mixing Data from Different Storage Places:</strong></h2>
+            <p>Keep data consistent and avoid mixing information from different storage locations.</p>
+        </li>
+
+        <li>
+             <h2><strong>Ensure Atomic State Changes:</strong></h2>
+            <p>Make state changes atomic by leveraging the concurrency features of the datastore. For example, use a single database transaction to check that the payment matches the cart value and confirm the order.</p>
+        </li>
+
+        <li>
+             <h2><strong>Utilize Datastore Integrity and Consistency Features:</strong></p>
+            <p>As a defense-in-depth measure, leverage datastore features such as column uniqueness constraints. These features enhance integrity and consistency in the application's data.</p>
+        </li>
+
+        <li>
+             <h2><strong>Do Not Rely on One Data Storage Layer to Secure Another:</strong></p>
+            <p>Avoid relying on one data storage layer (e.g., sessions) to prevent specific types of attacks (e.g., limit overrun attacks on databases). Each storage layer should be independently secured based on its specific requirements and vulnerabilities.</p>
+        </li>
+
+        <li>
+             <h2><strong>Ensure Session Handling Framework Consistency:</strong></p>
+            <p>Maintain internal consistency in session handling frameworks. Avoid updating session variables individually for the sake of optimization, as this may introduce vulnerabilities. Similarly, with Object-Relational Mapping (ORM) tools, be cautious about hiding critical concepts like transactions, ensuring a clear understanding and responsibility for them.</p>
+        </li>
+    </ol>
+
+</body>
+</html>
 
 
 
 <h2>Source</h2> 
-        Alphabet and Character Frequency: Filipino (Tagalog). Stefan Trost Media. Available at: <a href=https://www.sttmedia.com/characterfrequency-filipino">https://www.sttmedia.com/characterfrequency-filipino</a>. Accessed:14 September 2023.
-
+        PortSwigger. 'Web Security Academy: Race Conditions'. PortSwigger. Available at: https://portswigger.net/web-security/race-conditions. Accessed: 29 Sptember 2023.
 
     
         </div>
