@@ -67,6 +67,19 @@
         </ul>
     </div>
 
+ <h2>Single-Endpoint Race Conditions</h2>
+    <p>
+        Single-endpoint race conditions can arise when parallel requests with different values are sent to a single endpoint.
+        This report explores a scenario involving a password reset mechanism that stores user ID and reset token in the user's session.
+    </p>
+
+    <div class="sample-section">
+        <h2>Sample:</h2>
+        <ul>
+            <li>Collision in Password Reset: Sending two parallel password reset requests with different usernames from the same session.</li>
+            <li><strong>Impact:</strong> Collision in session data, potentially resetting the password for the wrong user.</li>
+        </ul>
+
 <h2>Source</h2> 
         PortSwigger. 'Web Security Academy: Race Conditions'. PortSwigger. Available at: https://portswigger.net/web-security/race-conditions. Accessed: 29 Sptember 2023.
 
