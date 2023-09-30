@@ -21,35 +21,32 @@
             <h1 class="content">Preventing Race Condition Vulnerabilities</h1>
 
 
-    <p>When a single request can transition an application through invisible sub-states, understanding and predicting its behavior is extremely difficult. This makes defense impractical. To secure an application properly, we recommend eliminating sub-states from all sensitive endpoints by applying the following strategies:</p>
+   h2>Prevention Measures</h2>
 
-    <ol>
-        <li>
-             <h2><strong>Avoid Mixing Data from Different Storage Places:</strong></h2>
-            <p>Keep data consistent and avoid mixing information from different storage locations.</p>
-        </li>
+    <p><strong>Implement Atomic Transactions:</strong> Ensure that critical operations involving checks, updates, and state changes are atomic to prevent interleaved and inconsistent states.</p>
 
-        <li>
-             <h2><strong>Ensure Atomic State Changes:</strong></h2>
-            <p>Make state changes atomic by leveraging the concurrency features of the datastore. For example, use a single database transaction to check that the payment matches the cart value and confirm the order.</p>
-        </li>
+    <p><strong>Use Locking Mechanisms:</strong> Employ locks to prevent concurrent access to critical sections of code, mitigating race conditions during state transitions.</p>
 
-        <li>
-             <h2><strong>Utilize Datastore Integrity and Consistency Features:</strong></p>
-            <p>As a defense-in-depth measure, leverage datastore features such as column uniqueness constraints. These features enhance integrity and consistency in the application's data.</p>
-        </li>
+    <p><strong>Enforce Database Constraints:</strong> Utilize database constraints such as uniqueness constraints to prevent multiple uses of the same resource or code.</p>
 
-        <li>
-             <h2><strong>Do Not Rely on One Data Storage Layer to Secure Another:</strong></p>
-            <p>Avoid relying on one data storage layer (e.g., sessions) to prevent specific types of attacks (e.g., limit overrun attacks on databases). Each storage layer should be independently secured based on its specific requirements and vulnerabilities.</p>
-        </li>
+    <p><strong>Validate and Refresh Security Tokens:</strong> In scenarios involving CAPTCHAs or anti-brute-force mechanisms, regularly validate and refresh security tokens to prevent reuse.</p>
 
-        <li>
-             <h2><strong>Ensure Session Handling Framework Consistency:</strong></p>
-            <p>Maintain internal consistency in session handling frameworks. Avoid updating session variables individually for the sake of optimization, as this may introduce vulnerabilities. Similarly, with Object-Relational Mapping (ORM) tools, be cautious about hiding critical concepts like transactions, ensuring a clear understanding and responsibility for them.</p>
-        </li>
-    </ol>
+    <p><strong>Monitor and Log:</strong> Implement comprehensive logging and monitoring to detect and respond to unusual or suspicious activities related to race conditions.</p>
 
+    <h2>Specific Measures for Order Processing:</h2>
+    <ul>
+        <li><strong>Atomic Transactions:</strong> Design order processing as atomic transactions to prevent partial completion of steps.</li>
+        <li><strong>Locking Mechanisms:</strong> Employ locks on critical sections of the code to avoid simultaneous updates to shared resources.</li>
+        <li><strong>Thorough Validation:</strong> Implement validation checks at each stage to ensure the integrity of the order processing flow.</li>
+        <li><strong>Session Validation:</strong> Utilize session management to validate the user's actions and prevent unauthorized or unexpected manipulations.</li>
+        <li><strong>Logging and Monitoring:</strong> Implement comprehensive logging to capture unusual order processing activities and enable proactive monitoring.</li>
+    </ul>
+
+    <h2>Specific Measures for Password Reset:</h2>
+    <ul>
+        <li><strong>Token Uniqueness:</strong> Ensure that each password reset request receives a unique token to avoid collisions.</li>
+        <li><strong>Session Data Validation:</strong> Implement thorough validation checks on session data to ensure its integrity before processing.</li>
+        <li><strong>Concurrency Controls:</strong> Utilize locks or other concurrency control mechanisms to prevent concurrent access to critical sections of the code.</li>
 
 <h2>Source</h2> 
         PortSwigger. 'Web Security Academy: Race Conditions'. PortSwigger. Available at: https://portswigger.net/web-security/race-conditions. Accessed: 29 Sptember 2023.
