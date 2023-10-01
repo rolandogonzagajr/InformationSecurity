@@ -75,7 +75,7 @@ h1 .second-line {
 }
 
 .leftnav a:hover::after {
-    content: " ►"; /* Add a right arrow after the link text on hover */
+
     font-weight: bold;
     margin-left: 5px;
 }
