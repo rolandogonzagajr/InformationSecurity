@@ -77,3 +77,10 @@ h1, .content {
     font-weight: bold;
     margin-left: 5px;
 }
+
+.screen-fit {
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
