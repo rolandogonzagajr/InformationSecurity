@@ -35,10 +35,15 @@ body {
 
    
 .content {
+    
+    line-height: 1.2;
+    background: linear-gradient(90deg, #005aff, #ff00e0);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    color: transparent;
     padding: 20px;
-    margin-left: 300px; /* Adjust this value to increase spacing */
+    margin-left: 300px;
 }
-
 .leftnav {
     background:linear-gradient(90deg, #005aff, #ff00e0);
     width: auto;
