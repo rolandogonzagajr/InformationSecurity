@@ -6,41 +6,49 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: linear-gradient(90deg, #005aff, #ff00e0);
     background-color: #f0f0f0;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align content to the left */
-    overflow-x: hidden; /* Hide horizontal overflow */
+    justify-content: flex-start;
+    overflow-x: hidden;
+    position: relative; /* Add relative positioning */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #005aff, #ff00e0);
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: -1;
 }
 
 .container {
     display: flex;
-    flex-direction: row; /* Change flex direction to horizontal */
-    align-items: center; /* Center horizontally within the container */
-    justify-content: space-between; /* Add space between h1 and leftnav */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding-right: 40px;
 }
 
-
-
-    h1 {
+h1 {
     font-size: 40px;
     line-height: 1.2;
-    background: linear-gradient(90deg, #005aff, #ff00e0); /* Darker gradient background */
-    background-size: 200% 100%; /* Wider gradient */
-    -webkit-background-clip: text; /* Clip the text to the gradient */
-    color: transparent; /* Make the text transparent */
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
-   
 .content {
     padding: 20px;
-    margin-left: 300px; /* Adjust this value to increase spacing */
+    margin-left: 300px;
 }
 
 .leftnav {
-    background:linear-gradient(90deg, #005aff, #ff00e0);
+    background: linear-gradient(90deg, #005aff, #ff00e0);
     width: auto;
     min-width: 250px;
     padding: 20px;
@@ -51,11 +59,9 @@ body {
     min-height: 100vh;
     position: fixed;
     left: 0;
-    top: 0; /* Stick it to the top */
-    bottom: 0; /* Extend it to the bottom */
+    top: 0;
+    bottom: 0;
 }
-
-/* Rest of your CSS styles */
 
 .leftnav a {
     text-decoration: none;
@@ -71,13 +77,10 @@ body {
 }
 
 .leftnav a:hover {
-    color: #ff00e0; /* Change font color on hover to match the gradient */
+    color: #ff00e0;
 }
 
 .leftnav a:hover::after {
-
     font-weight: bold;
     margin-left: 5px;
 }
-
-  
