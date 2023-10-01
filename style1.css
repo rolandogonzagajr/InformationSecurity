@@ -10,40 +10,33 @@ body {
     background-color: #f0f0f0;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Align content to the left */
-    overflow-x: hidden; /* Hide horizontal overflow */
+    justify-content: flex-start;
+    overflow-x: hidden;
 }
 
 .container {
     display: flex;
-    flex-direction: row; /* Change flex direction to horizontal */
-    align-items: center; /* Center horizontally within the container */
-    justify-content: space-between; /* Add space between h1 and leftnav */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding-right: 40px;
 }
 
-
-
-    h1 {
+h1, .content {
     font-size: 40px;
-    line-height: 1.2;
-    background: linear-gradient(90deg, #005aff, #ff00e0); /* Darker gradient background */
-    background-size: 200% 100%; /* Wider gradient */
-    -webkit-background-clip: text; /* Clip the text to the gradient */
-    color: transparent; /* Make the text transparent */
-}
-
-   
-.content {
-    
     line-height: 1.2;
     background: linear-gradient(90deg, #005aff, #ff00e0);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     color: transparent;
+}
+
+.content {
+    line-height: 1.2;
     padding: 20px;
     margin-left: 300px;
 }
+
 .leftnav {
     background:linear-gradient(90deg, #005aff, #ff00e0);
     width: auto;
