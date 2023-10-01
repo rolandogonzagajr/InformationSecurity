@@ -10,32 +10,35 @@ body {
     background-color: #f0f0f0;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    overflow-x: hidden;
+    justify-content: flex-start; /* Align content to the left */
+    overflow-x: hidden; /* Hide horizontal overflow */
+
 }
 
 .container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: row; /* Change flex direction to horizontal */
+    align-items: center; /* Center horizontally within the container */
+    justify-content: space-between; /* Add space between h1 and leftnav */
     padding-right: 40px;
 }
 
 .screen-fit {
-    max-width: 100vw;
-    max-height: 100vh;
-    object-fit: contain;
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: contain;
 }
 
-h1 {
+
+    h1 {
     font-size: 40px;
     line-height: 1.2;
 }
 
+   
 .content {
     padding: 20px;
-    margin-left: 300px;
+    margin-left: 300px; /* Adjust this value to increase spacing */
 }
 
 .leftnav {
@@ -50,9 +53,11 @@ h1 {
     min-height: 100vh;
     position: fixed;
     left: 0;
-    top: 0;
-    bottom: 0;
+    top: 0; /* Stick it to the top */
+    bottom: 0; /* Extend it to the bottom */
 }
+
+/* Rest of your CSS styles */
 
 .leftnav a {
     text-decoration: none;
@@ -61,27 +66,26 @@ h1 {
     padding: 10px;
     text-align: justify;
     flex-grow: 1;
+    background: linear-gradient(90deg, #005aff, #ff00e0); /* Darker gradient background */
+    background-size: 200% 100%; /* Wider gradient */
+    -webkit-background-clip: text; /* Clip the text to the gradient */
+    color: transparent; /* Make the text transparent */
 }
 
 .leftnav a:hover {
     background-color: #04AA6D;
 }
-
-.leftnav h1 {
-    font-size: 40px;
-    line-height: 1.2;
-    background: linear-gradient(90deg, #005aff, #ff00e0);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: blink 1s infinite;
+.leftnav a:hover {
+    background-color: #005aff; /* Match hover color to the gradient */
 }
 
-@keyframes blink {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
+/* Additional styles for hover effect */
+.leftnav a:hover {
+    color: #ff00e0; /* Change font color on hover to match the gradient */
+}
+
+.leftnav a:hover::after {
+
+    font-weight: bold;
+    margin-left: 5px;
 }
