@@ -40,7 +40,7 @@ body {
 }
 
 .leftnav {
-    background-color:linear-gradient(90deg, #005aff, #ff00e0);
+    background:linear-gradient(90deg, #005aff, #ff00e0);
     width: auto;
     min-width: 250px;
     padding: 20px;
