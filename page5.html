@@ -25,7 +25,6 @@
   <h2>Isolation of Data Sources:</h2>
     <ul>
         <li>Avoid mixing data from different sources.</li>
-        <li>Devise library vulnerability could have been avoided by reading both token and email address from the database or passing them as instance variables.</li>
     </ul>
 
     <h2>Atomic State Changes:</h2>
@@ -38,13 +37,6 @@
     <ul>
         <li>Leverage datastore integrity/consistency features like uniqueness constraints for defense in depth.</li>
         <li>Avoid relying on one data storage layer to secure another (e.g., sessions for preventing limit-overrun attacks on databases).</li>
-    </ul>
-
-    <h2>Session Handling Best Practices:</h2>
-    <ul>
-        <li>Ensure session handling frameworks maintain internal consistency.</li>
-        <li>Avoid updating session variables individually for optimization; it can introduce security risks.</li>
-        <li>ORM frameworks should handle concepts like transactions transparently to ensure consistency.</li>
     </ul>
 
     <h2>Client-Side State Management:</h2>
